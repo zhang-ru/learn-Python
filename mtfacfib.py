@@ -16,9 +16,8 @@ def fib(x):
 	if x<2: return 1
 	return (fib(x-1) + fib(x-2)
 
-func = [fib,myfac,mysum]
+# func = [fib,myfac,mysum]
 n = 12
-
 def main():
 	nfunc = range(len(func))
 	print("single thread")
