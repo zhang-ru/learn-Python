@@ -1,5 +1,4 @@
 # TODO: complete this class
-import math
 class PaginationHelper:
     
     # The constructor takes in an array of items and a integer indicating
@@ -16,7 +15,10 @@ class PaginationHelper:
 
     # returns the number of pages
     def page_count(self):
-      return math.ceil(len(self.collection)%self.items_per_page)
+      if len(self.collection)%self.items_per_page == 0 :
+        return len(self.collection)/self.items_per_page
+      else:
+        return int(len(self.collection)/self.items_per_page) +1
 
 
     # returns the number of items on the current page. page_index is zero based
@@ -35,7 +37,12 @@ class PaginationHelper:
     # determines what page an item is on. Zero based indexes.
     # this method should return -1 for item_index values that are out of range
     def page_index(self,item_index):
-      if item_index < 0 or item_index > self.item_count:
+      if item_index < 0 or item_index > self.item_count()-1:
         return -1
       else:
-        return math.ceil(item_index%self.items_per_page)
+        return int((1+item_index)/self.items_per_page)
+
+helper = PaginationHelper(range(1,25), 10)
+print(helper.page_count())
+print(helper.page_index(28))
+print(helper.item_count())
