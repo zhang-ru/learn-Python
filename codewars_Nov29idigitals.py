@@ -1,6 +1,5 @@
 def square_digits(num):
     s = str(num)
-
     l = []
     for i,v in enumerate(s):
     	l.append(str(int(v)**2))
