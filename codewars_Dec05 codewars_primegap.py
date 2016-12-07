@@ -3,7 +3,7 @@ def gap(g, m, n):
     # your code
     l=[]
     for i in range(m,n+1):
-    	for j in range(2,i):
+    	for j in range(2,int(math.sqrt(i))+1):
     		if i%j ==0:
     			break
     	else:
