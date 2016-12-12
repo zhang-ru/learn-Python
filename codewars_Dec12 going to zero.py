@@ -1,5 +1,5 @@
 import re,math
-def going(n):
+def going_my(n):
     sum =0
     for i in range(1,n+1):
     	sum = sum + math.factorial(i)
@@ -10,5 +10,11 @@ def going(n):
     	return result
     else:
     	return math.floor(result*1000000)/1000000
-
+def going(n):
+    factor = 1.0
+    acc = 1.0
+    for i in range(n, 1, -1):
+        factor *= 1.0 / i
+        acc += factor
+    return int(acc * 1e6) / 1e6
 print(going(81))
